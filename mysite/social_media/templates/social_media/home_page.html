@@ -1,0 +1,13 @@
+{% extends "social_media/base.html" %}
+{% block title %}<title>Demon App Home</title> {% endblock %}
+
+{% block begin_auth %} 
+    <div class = "container-fluid"> 
+        {% if user.is_authenticated %}
+        <h1 class = "display-1"> Welcome to Demon App, {{user.username}}!</h1>
+        {% else %}
+        <h1 class = "display-1"> Welcome to Demon App!</h1>
+        <div>Create profile <a href="signup">here!</a></div>
+        {% endif %}
+    </div>
+{% endblock %} 

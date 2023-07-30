@@ -1,0 +1,14 @@
+{% extends "social_media/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}<title>Sign Up</title>{% endblock %}
+
+{% block begin_auth%}
+  <div class = "container-fluid" style = "margin-top: 40px;">
+  <form method = "post">
+    {% csrf_token%}
+    {{form|crispy}}
+    <p>Have an account? Login <a href="/login">here!</a></p>
+    <button type = "submit" class = "btn btn-primary btn-lg">Register</button>
+  </form>
+  </div>
+{% endblock %}
